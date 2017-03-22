@@ -3,7 +3,7 @@
 
   Creating a Reducer is a two step process:
   1) Create the reducer;
-  2) Wire it up to the application.
+  2) Wire it into the application.
 */
 
 export default function() {
