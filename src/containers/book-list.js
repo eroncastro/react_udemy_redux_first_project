@@ -1,11 +1,15 @@
 /*
   The connection between React and Redux is done by a library called react-redux.
   To use it, we are going to define a container instead of a component.
-  A container is a React component that has direct access to the state
+  A container is a React component that has direct connection to the state
   produced/managed by Redux.
 
   In general, we want the most parent components that carries a piece of
   particular state to be a container.
+
+  Action creator - function that returns an action.
+  Action - object that flows through all different reducers.
+  Reducers can then use that particular action to produce a new piece of state.
 */
 
 import React from 'react';
