@@ -14,6 +14,14 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import { selectBook } from '../actions/index'; // imports action creator
+/*
+  The bindActionCreators function import below
+  is used to ensure that the above imported action creator
+  will flow through all of the reducers.
+*/
+import { bindActionCreators } from 'redux';
+
 
 class BookList extends React.Component {
   renderList() {
@@ -50,4 +58,23 @@ function mapStateToProps(state) {
   Whenever the application changes, the object books will be assigned
   as props to the component.
 */
-export default connect(mapStateToProps)(BookList);
+
+/*
+  Anything returned from this function will end up as props
+  on the BookList container.
+*/
+function mapDispatchToProps(dispatch) {
+  /*
+    Whenever selectBook is called, the result should be passed
+    to all of our reducers. That's what bindActionCreators is
+    doing with dispatch.
+  */
+  return bindActionCreators({ selectBook: selectBook }, dispatch);
+}
+
+/*
+  Promote BookList from a component to a container - it needs to know
+  about this new dispatch method, selectBook. Make it available as
+  a prop.
+*/
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);
