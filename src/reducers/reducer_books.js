@@ -11,8 +11,9 @@
 
   An action creator is a function that returns an action, which is an object.
   That object is then automatically sent to all reducers inside the application.
+  The action has a type and some data.
   Reducers, depending on what the action is, can choose to return a different piece of state.
-  That new piece of state gets piped in to the application state, which gets pumped back
+  That new piece of state gets piped into the application state, which gets pumped back
   to our React app, causing all components to re-render.
 */
 
